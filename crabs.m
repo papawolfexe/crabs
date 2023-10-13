@@ -24,9 +24,9 @@ function crabs ()
   set( captGraphics(i), 'Visible', 'off' );
   endfor
   % move capt
-  % [xCapt, yCapt, thetaCapt] = moveCapt(cmd, xCapt, yCapt, thetaCapt);
+   [xCapt, yCapt, thetaCapt] = moveCapt(cmd, xCapt, yCapt, thetaCapt);
   % draw new capt
-
+  captGraphics = drawCapt( xCapt, yCapt, thetaCapt, sizeCapt);
   endif
 
   endwhile

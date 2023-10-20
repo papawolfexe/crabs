@@ -25,19 +25,17 @@ for i=1:length(captGraphics)
 set(captGraphics(i),'Visible','off');
 endfor
 %move capt
-[xCapt,yCapt,thetaCapt] = moveCapt(cmd,xCapt,yCapt,thetaCapt,sizeCapt, mapHeight,
-mapWidth);
+[xCapt,yCapt,thetaCapt] = moveCapt(cmd,xCapt,yCapt,thetaCapt,sizeCapt, mapHeight, mapWidth);
 %draw new capt
 captGraphics = drawCapt(xCapt,yCapt,thetaCapt,sizeCapt);
 elseif (cmd == "i" || cmd == "j" || cmd == "k" || cmd == "l" || cmd ==",") % respond crab
-moved
+
 %erase old crab
 for i=1:length(crabGraphics)
 set(crabGraphics(i),'Visible','off');
 endfor
 %move crab
-[xCrab,yCrab,thetaCrab] = moveCrab(cmd,xCrab,yCrab,thetaCrab,sizeCrab, mapHeight,
-mapWidth);
+[xCrab,yCrab,thetaCrab] = moveCrab(cmd,xCrab,yCrab,thetaCrab,sizeCrab, mapHeight, mapWidth);
 %draw new captain and crab
 crabGraphics = drawCrab(xCrab,yCrab,thetaCrab,sizeCrab)
 endif

@@ -29,8 +29,7 @@ endfor
 mapWidth);
 %draw new capt
 captGraphics = drawCapt(xCapt,yCapt,thetaCapt,sizeCapt);
-elseif (cmd == "i" || cmd == "j" || cmd == "k" || cmd == "l" || cmd ==",") % respond crab
-moved
+elseif (cmd == "i" || cmd == "j" || cmd == "k" || cmd == "l" || cmd ==",") % respond crab moved
 %erase old crab
 for i=1:length(crabGraphics)
 set(crabGraphics(i),'Visible','off');

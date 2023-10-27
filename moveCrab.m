@@ -1,4 +1,4 @@
-function [xCrab,yCrab,thetaCrab] = moveCrab(cmd,xCrab,yCrab,thetaCrab,sizeCrab, mapHeight, mapWidth);
+function [xCrab,yCrab,thetaCrab] = moveCrab(cmd,x,y,theta,size, height, width);
   dTheta = pi/6;
   dStep = 50;
   if( cmd == "j" ) %move left

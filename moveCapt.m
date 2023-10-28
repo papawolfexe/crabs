@@ -1,4 +1,4 @@
-function [xCapt,yCapt,thetaCapt] = moveCapt(cmd,xCapt,yCapt,thetaCapt,sizeCapt, mapHeight, mapWidth);
+function [xCapt,yCapt,thetaCapt] = moveCapt(cmd,x,y,theta,size, height, width);
   dTheta = pi/6;
   dStep = 50;
   if( cmd == "w" ) %move forward

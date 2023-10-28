@@ -8,7 +8,7 @@ function [xCrab,yCrab,thetaCrab] = moveCrab(cmd,x,y,theta,size, height, width);
   elseif ( cmd == "l" ) %move right
   xCrab = x + dStep * -sin(theta);
   yCrab = y + dStep * cos(theta);
-  thetaCrab = theta + dTheta;
+  thetaCrab = theta;
   elseif ( cmd == "," ) %turn left
   xCrab = x;
   yCrab = y;
@@ -19,8 +19,8 @@ function [xCrab,yCrab,thetaCrab] = moveCrab(cmd,x,y,theta,size, height, width);
   thetaCrab = theta + dTheta;
   elseif ( cmd == "k" ) %move back
   xCrab = x + dStep * -sin(theta);
-  yCrab = y + dStep * -cos(theta);
-  thetaCrab = theta - dTheta;
+  yCrab = y + dStep * cos(theta);
+  thetaCrab = theta;
   else % if none of the cases are true, set the new variables equal to the old inputs.
   xCrab = x;
   yCrab = y;

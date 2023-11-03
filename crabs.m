@@ -1,7 +1,7 @@
-function crabs ()
-
+function crabs (level)
+  numCrabs = level;
   %initialize command and map dimensions and draw map
-   cmd = "null";
+  cmd = "null";
   [mapHeight,mapWidth] = drawMap("BGImage.png");
 
   %initialize captain location, heading and size
@@ -32,6 +32,8 @@ function crabs ()
   while(1)
   % Put your jellyfish stuff here ...
 
+
+  cmd = kbhit(1);
   % erase old jellyfish
     for i=1:length(jellyGraphics)
       delete(jellyGraphics(i));
@@ -42,13 +44,12 @@ function crabs ()
   jellyGraphics = drawJelly(xJelly,yJelly,thetaJelly,sizeJelly);
 
   % read the keyboard
-  cmd = kbhit(1);
     if (cmd == 'Q')
       break;
     endif
 
     %read the keyboard.
-    cmd = kbhit();
+
     if( cmd == "w" || cmd == "a" || cmd == "d" ) %respond to keyboard. captain has moved
 
     %erase old captain
@@ -77,9 +78,9 @@ function crabs ()
     endif
 
   fflush(stdout);
-  pause(.01)
+  pause(.01);
   endwhile
 
   close all
-  clear
+
 endfunction

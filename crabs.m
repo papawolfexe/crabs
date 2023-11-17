@@ -10,11 +10,20 @@ function crabs (level)
   thetaCapt = -pi/2;
   sizeCapt = 50;
 
-  %initialize crab location, heading and size
+  %(old)initialize crab location, heading and size
   xCrab = 1000;
   yCrab = 1200;
   thetaCrab = -pi/2;
   sizeCrab = 50;
+
+    %initialize crab location, heading and size
+  %xCrab = rand(1,numCrabs)*mapWidth;
+  %yCrab = 3*mapHeight/4 + rand(1,numCrabs)*mapHeight/4;
+  %thetaCrab = ones(1,numCrabs)*(-pi/2);
+  %crabsCaught = 0;
+  %sizeCrab = 50;
+    %crab caught check
+  %isCrabCaught = zeros(1,numCrabs)
 
   %initialize jellyfish
   xJelly = rand*mapWidth;

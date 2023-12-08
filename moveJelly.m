@@ -1,16 +1,15 @@
 function [xJelly,yJelly,thetaJelly] = moveJelly(level, x, y, theta, size, height, width)
 
-  jellyMove = 50;
-  step = jellyMove + level;
+  moveScale = 50;
+  step = moveScale + level;
 
   yJelly = y + step;
   xJelly = x;
   thetaJelly = theta;
 
-  % return a y-position increased by step, but return the same x and theta values
   if (yJelly > height-10*size)
-    yJelly = size;
-    xJelly = rand * width;
+    yJelly=size;
+    xJelly=width*rand;
   endif
 
 endfunction

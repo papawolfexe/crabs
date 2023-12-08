@@ -33,5 +33,10 @@ function jellyHandle = drawJelly (x,y,theta,size)
   jellyHandle(10)=drawLine(pt12,pt13,'m');
   jellyHandle(11)=drawLine(pt13,pt5,'m');
   jellyHandle(12)=drawLine(pt12,pt4,'m');
-endfunction
+
+  for i=1 : length(jellyHandle)
+    set (jellyHandle(i), "color", [1 0 1]);
+  endfor
+
+ endfunction
 

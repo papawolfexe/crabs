@@ -25,7 +25,7 @@ function capt = getCapt(captSize)
   captPt18 = [5*captSize; 0; 1];
   captPt19 = [3*captSize; 0; 1];
   % Net center
-  captPt20 = [4*captSize; -2*captSize; 1];
+  captPt20 = [3*captSize; -2*captSize; 1];
 
   % Assemble all points into the captain matrix
   capt = [captPt1, captPt2, captPt3, captPt4, captPt5, captPt6, captPt7, ...

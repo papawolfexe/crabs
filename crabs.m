@@ -1,4 +1,17 @@
 function crabs()
+    % Load background music
+    [y, Fs] = audioread('backgroundMusic.wav');
+    player = audioplayer(y, Fs);
+    play(player);  % Start playing the music
+
+    % Load sting sound effect
+    [stingY, stingFs] = audioread('stingSoundEffect.wav');
+    stingPlayer = audioplayer(stingY, stingFs);
+
+    % Load crab caught sound effect
+    [crabCaughtY, crabCaughtFs] = audioread('crabCaughtSoundEffect.wav');
+    crabCaughtPlayer = audioplayer(crabCaughtY, crabCaughtFs);
+
     playGame = 1;
     while (playGame)
         % Draw start screen and get level
@@ -88,6 +101,7 @@ function crabs()
             for k = 1:numJelly
                 if (getDist(xJelly(k), yJelly(k), xCapt, yCapt) < 3 * sizeCapt)
                     healthCapt = healthCapt - jellySting;
+                    play(stingPlayer);  % Play sting sound effect
                 endif
             endfor
 
@@ -96,6 +110,7 @@ function crabs()
                 if (!isCrabCaught(k) && getDist(xNet, yNet, xCrab(k), yCrab(k)) < 2 * sizeCapt)
                     crabsCaught = crabsCaught + 1;
                     isCrabCaught(k) = 1;
+                    play(crabCaughtPlayer);  % Play crab caught sound effect
 
                     % Erase old crab
                     for i = 1:length(crabGraphics(:, k))
@@ -124,6 +139,11 @@ function crabs()
         % Draw end screen and check if the user wants to play again
         playGame = drawEndScreen("MainTitleScreen.png", crabsCaught, numCrabs);
     endwhile
+
+    % Stop the music and sound effects when the game ends
+    stop(player);
+    stop(stingPlayer);
+    stop(crabCaughtPlayer);
 
     close all;
     clear;

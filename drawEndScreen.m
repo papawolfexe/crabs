@@ -4,11 +4,11 @@ function restart = drawEndScreen (imgName,crabsCaught,numCrabs)
   drawMap(imgName);
   hold on
   myMessage=['Good Job! You Caught ', num2str(crabsCaught) ' crabs'];
-  textLoc = [350,750];
+  textLoc = [150,350];
   textHandle=text(textLoc(1), textLoc(2), myMessage, 'FontSize', 30, 'Color', 'red');
   pause(5)
   delete(textHandle)
-  textLoc = [450,750];
+  textLoc = [750,350];
   textHandle=text(textLoc(1), textLoc(2), 'Play again? Y/N', 'FontSize', 40, 'Color', 'red');
   %read keyboard
   while (1)
